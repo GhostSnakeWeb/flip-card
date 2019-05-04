@@ -1,3 +1,53 @@
 body {
-	text-align: center;
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+.card {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    transform: translate(-50%, -50%);
+	width: 300px;
+	height: 400px;
+	
+	/*Определяет, как дочерние элементы должны отображаться в 3D-пространстве. 
+	Это свойство должно использоваться совместно с transform. */
+    transform-style: preserve-3d;
+    perspective: 600px;
+    transition: 0.5s;
+}
+.card .front {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #000;
+	background-image: url("../img/marvel2.jpg");
+    background-size: cover;
+    background-position: center;
+	width: 300px;
+	height: 400px;
+
+	/*CSS свойство backface-visibility определяет, должна ли быть видна задняя сторона элемента или нет. 
+	Данное свойство применяется для того, чтобы при трансформации элемента скрыть его заднюю сторону, 
+	а не отображать её зеркально (значение по умолчанию).*/
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    transition: 0.5s;
+}
+.card:hover .front {
+    transform: rotateX(-180deg);
+}
+.card .back {
+	position: absolute;
+	left: 0;
+	background: #000;
+	background-image: url("../img/marvel2.jpg");
+
+	/*CSS свойство backface-visibility определяет, должна ли быть видна задняя сторона элемента или нет. 
+	Данное свойство применяется для того, чтобы при трансформации элемента скрыть его заднюю сторону, 
+	а не отображать её зеркально (значение по умолчанию).*/
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+    transition: 0.5s;
 }
