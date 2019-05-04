@@ -32,22 +32,26 @@ body {
 	Данное свойство применяется для того, чтобы при трансформации элемента скрыть его заднюю сторону, 
 	а не отображать её зеркально (значение по умолчанию).*/
     backface-visibility: hidden;
-    transform: rotateX(0deg);
+    transform: rotateY(0deg);
     transition: 0.5s;
 }
 .card:hover .front {
-    transform: rotateX(-180deg);
+    transform: rotateY(-180deg);
 }
 .card .back {
 	position: absolute;
 	left: 0;
 	background: #000;
-	background-image: url("../img/marvel2.jpg");
+	width: 300px;
+	height: 400px;
 
 	/*CSS свойство backface-visibility определяет, должна ли быть видна задняя сторона элемента или нет. 
 	Данное свойство применяется для того, чтобы при трансформации элемента скрыть его заднюю сторону, 
 	а не отображать её зеркально (значение по умолчанию).*/
     backface-visibility: hidden;
-    transform: rotateX(180deg);
+    transform: rotateY(180deg);
     transition: 0.5s;
+}
+.card:hover .back {
+    transform: rotateY(0deg);
 }
